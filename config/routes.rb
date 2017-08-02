@@ -1,3 +1,4 @@
 Rails.application.routes.draw do
-  get "quotes/random", to: "quotes#random"
+  resources :quotes, only: [:index]
+  resource :quote, only: [:show]
 end

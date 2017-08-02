@@ -1,24 +1,24 @@
-# README
+## game of thrones quote api
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
+An api for random Game of Thrones show quotes.
 
 * Ruby version
 
-* System dependencies
+### API endpoints
 
-* Configuration
+* `/quote`: returns a random quote
+* `/quotes`: returns 10 random quotes
+* `/quotes?count={key}`: returns a collection of random quotes
 
-* Database creation
+### Setup
 
-* Database initialization
+To get started run:
+* `bundle`
+* `rake db:create`
+* `rake db:migrate`
 
-* How to run the test suite
+To run the tests:
+* `rake db:test:prepare`
+* `rspec`
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+To seed the database with quotes and characters, run `rake db:seed`.

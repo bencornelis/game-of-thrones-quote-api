@@ -1,18 +1,14 @@
-require 'rails_helper'
+require "rails_helper"
 
 describe "get random quotes route" do
-  context "with no parameters" do
-    let!(:quote) { create(:quote) }
+  context "without count parameter" do
     before do
-      get "/quotes/random"
+      create_list(:quote, 10)
+      get "/quotes"
     end
 
-    it "returns the quote content" do
-      expect(parse_response(response)["quote"]).to eq quote.content
-    end
-
-    it "returns the character that said the quote" do
-      expect(parse_response(response)["character"]).to eq quote.character.name
+    it "returns 10 quotes by default" do
+      expect(parse_response(response).size).to eq 10
     end
 
     it "returns status code 200" do
@@ -23,7 +19,7 @@ describe "get random quotes route" do
   context "with count parameter" do
     before do
       create_list(:quote, 3)
-      get "/quotes/random?count=2"
+      get "/quotes?count=2"
     end
 
     it "returns that number of quotes" do
