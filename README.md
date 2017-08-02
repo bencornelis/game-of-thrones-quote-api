@@ -1,13 +1,11 @@
-## game of thrones quote api
+## Game of Thrones Quote API
 
 An api for random Game of Thrones show quotes.
 
-* Ruby version
-
 ### API endpoints
 
-* `/quote`: returns a random quote
-* `/quotes`: returns 10 random quotes
+* `/quote`             : returns a random quote
+* `/quotes`            : returns 10 random quotes
 * `/quotes?count={key}`: returns a collection of random quotes
 
 ### Setup
